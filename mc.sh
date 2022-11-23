@@ -91,7 +91,7 @@ echo "Server IP is: $server_ip"
 echo "Server running on: $server_ip" > $root/ip.txt
 echo "\n$orig_server_ip\n"
 
-curl -H "Content-Type: application/json" -d "{\"content\": $orig_server_ip}" "https://discord.com/api/webhooks/1045012109047640075/WT-uuW2ZK1zxvYn88UQihATmHcjHf2ZQoNN7LVzwoi-REn4whWhqf1ExgxHBg_1l2RRa"
+curl -H "Content-Type: application/json" -d "{\"content\": $server_ip}" "https://discord.com/api/webhooks/1045012109047640075/WT-uuW2ZK1zxvYn88UQihATmHcjHf2ZQoNN7LVzwoi-REn4whWhqf1ExgxHBg_1l2RRa"
 
 touch logs/latest.log
 # Experiment: Run http server after all ports are opened
