@@ -1,1 +1,1 @@
-bash mc.sh
+./gotty
