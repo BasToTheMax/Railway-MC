@@ -1,2 +1,2 @@
 chmod u+x ./gotty
-./gotty
+./gotty bash
