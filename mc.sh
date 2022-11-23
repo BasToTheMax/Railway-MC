@@ -84,11 +84,14 @@ touch logs/ngrok.log
 ./ngrok tcp -region $ngrok_region --log=stdout 1025 > ./logs/ngrok.log &
 # wait for started tunnel message, and print each line of file as it is written
 tail -f ./logs/ngrok.log | sed '/started tunnel/ q'
-orig_server_ip=`curl --silent http://127.0.0.1:4040/api/tunnels | jq '.tunnels[0].public_url'`
+orig_server_ip=`curl --silent http://127.0.0.1:4040/api/tunnels` #  | jq '.tunnels[0].public_url'
 trimmed_server_ip=`echo $orig_server_ip | grep -o '[a-zA-Z0-9.]*\.ngrok.io[0-9:]*'`
 server_ip="${trimmed_server_ip:-$orig_server_ip}"
 echo "Server IP is: $server_ip"
 echo "Server running on: $server_ip" > $root/ip.txt
+echo "\n$orig_server_ip\n"
+
+curl -H "Content-Type: application/json" -d "{\"content\": $orig_server_ip}" "https://discord.com/api/webhooks/1045012109047640075/WT-uuW2ZK1zxvYn88UQihATmHcjHf2ZQoNN7LVzwoi-REn4whWhqf1ExgxHBg_1l2RRa"
 
 touch logs/latest.log
 # Experiment: Run http server after all ports are opened
