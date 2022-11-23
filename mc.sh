@@ -101,5 +101,6 @@ touch logs/latest.log
 PATH=$PWD/jre/bin:$PATH
 echo "Running server..."
 # java -Xmx512M -Xms512M -jar server.jar nogui
-java -jar server.jar
+java -Xmx384M -Xms384M -jar server.jar nogui
+# java -jar server.jar
 echo "Exit code $?"
