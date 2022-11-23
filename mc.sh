@@ -42,15 +42,7 @@ require() {
 require_file() { require -f $1 "File $1 required but not found"; }
 require_dir()  { require -d $1 "Directory $1 required but not found"; }
 require_env()  {
-    var=`python3 -c "import os;print(os.getenv('$1',''))"`
-    if [ -z "${var}" ]; then
-        echo "Environment variable $1 not set. "
-        echo "In your .env file, add a line with:"
-        echo "$1="
-        echo "and then right after the = add $2"
-        exit
-    fi
-    eval "$1=$var"
+    echo "HI"
 }
 require_executable() {
     require_file "$1"
