@@ -5,6 +5,8 @@ root=$PWD
 mkdir -p mc
 cd mc
 
+java -v
+
 download() {
     set -e
     echo By executing this script you agree to the JRE License, the PaperMC license,
