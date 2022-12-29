@@ -47,6 +47,7 @@ require_env()  {
 require_executable() {
     require_file "$1"
     chmod +x "$1"
+    echo "found executable: $1"
 }
 
 # server files
