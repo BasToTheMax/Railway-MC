@@ -2,5 +2,6 @@
 # ./gotty bash
 
 echo "welcome"
+echo "bttm :)"
 
 bash mc.sh
