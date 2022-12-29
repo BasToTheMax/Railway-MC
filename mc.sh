@@ -55,8 +55,8 @@ require_executable() {
 # server files
 require_file "server.jar"
 # java
-require_dir "jre"
-require_executable "jre/bin/java"
+# require_dir "jre"
+# require_executable "jre/bin/java"
 # ngrok binary
 require_executable "ngrok"
 
