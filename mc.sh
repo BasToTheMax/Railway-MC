@@ -5,7 +5,7 @@ root=$PWD
 mkdir -p mc
 cd mc
 
-java -v
+# java -v
 
 download() {
     set -e
