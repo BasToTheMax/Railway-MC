@@ -1,1 +1,0 @@
-java -Xmx512M -Xms512M -jar server.jar --port 25565 --offline-mode
