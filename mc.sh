@@ -50,8 +50,6 @@ require_executable() {
 }
 
 # server files
-require_file "eula.txt"
-require_file "server.properties"
 require_file "server.jar"
 # java
 require_dir "jre"
