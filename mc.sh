@@ -104,4 +104,7 @@ echo "Running server..."
 java -Xmx512M -Xms512M -jar server.jar --port 25565 --offline-mode
 # java -Xmx384M -Xms384M -jar server.jar nogui
 # java -jar server.jar
+
+cat ./start.sh
+
 echo "Exit code $?"
