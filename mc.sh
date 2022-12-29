@@ -82,7 +82,7 @@ rm ./logs/*
 echo "Starting ngrok tunnel in region $ngrok_region"
 ./ngrok authtoken $ngrok_token
 touch logs/ngrok.log
-./ngrok tcp -region $ngrok_region --log=stdout 1025 > ./logs/ngrok.log &
+./ngrok tcp -region $ngrok_region --log=stdout 25565 > ./logs/ngrok.log &
 # wait for started tunnel message, and print each line of file as it is written
 tail -f ./logs/ngrok.log | sed '/started tunnel/ q'
 orig_server_ip=`curl --silent http://127.0.0.1:4040/api/tunnels` #  | jq '.tunnels[0].public_url'
@@ -101,7 +101,7 @@ touch logs/latest.log
 # Start minecraft
 PATH=$PWD/jre/bin:$PATH
 echo "Running server..."
-java -Xmx512M -Xms512M -jar server.jar --port 1025 --offline-mode
+java -Xmx512M -Xms512M -jar server.jar --port 25565 --offline-mode
 # java -Xmx384M -Xms384M -jar server.jar nogui
 # java -jar server.jar
 echo "Exit code $?"
